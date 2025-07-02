@@ -64,6 +64,7 @@
   -moz-column-gap: 2vw;
        column-gap: 2vw;
   grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
 }
 
 .columns-3 {
@@ -137,6 +138,7 @@
 /* Grid item */
 .grid-item {
   width: 100%;
+  min-width: 300px; /* Minimum width for each grid item */
 }
 
 /* Image wrapper */
@@ -184,17 +186,26 @@
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
   grid-auto-rows: auto;
   gap: 20px;
+  justify-content: center;
 }
 
 /* Individual grid item */
 .grid2x3-item {
   width: 100%;
+  min-width: 500px;
 }
 
 /* Container for the image and thumbnails */
 .grid2x3-image-container {
   display: flex;
   align-items: stretch;
+}
+
+.grid2x3-large-image-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Container for the thumbnails */
@@ -223,10 +234,10 @@
 
 /* Large image styling */
 .grid2x3-large-image {
-  width: 160%;
-  max-width: 400px; /* Set a max width to prevent large images from covering the page */
+  width: 100%;
+  max-width: none; /* Set a max width to prevent large images from covering the page */
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Ensure the thumbnails container matches the height of the large image */
@@ -255,11 +266,14 @@
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
   grid-auto-rows: auto;
   gap: 20px;
+  justify-content: center;
 }
 
 /* Individual grid item */
 .grid1x3-item {
   width: 100%;
+  min-width: 500px;
+  
 }
 
 /* Container for the image and thumbnails */
@@ -294,10 +308,10 @@
 
 /* Large image styling */
 .grid1x3-large-image {
-  width: 160%;
-  max-width: 400px; /* Set a max width to prevent large images from covering the page */
+  width: 100%;
+  max-width:none; /* Set a max width to prevent large images from covering the page */
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Ensure the thumbnails container matches the height of the large image */
@@ -319,11 +333,27 @@
   }
 }
 
+
 /* Container for the scene Relighting grid */
 /* Container for the 1x3 grid */
 .grid1x3-container_new {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 2 columns */
   grid-auto-rows: auto;
+  max-width: 800px;
   gap: 20px;
+  justify-content: center;
+}
+
+.hover-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px; /* This limits the image height */
+  object-fit: contain;
+}
+
+/* Individual grid item */
+.grid1x3-item-move {
+  width: 100%;
+  min-width: 400px;
 }
