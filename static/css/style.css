@@ -10,7 +10,7 @@ body {
     /* background: linear-gradient(127deg, #265073 0%, #596FB7 45%, #FEAE6F 75%, rgb(239, 212, 133) 100%); */
     /* background: linear-gradient(127deg, #254B46ff 0%, rgb(60, 155, 142) 45%, #FEAE6F 75%, rgb(239, 212, 133) 100%); */
     /* body { */
-    background: url('../img/preview1.png') repeat center center fixed;
+    background: url('../img/preview8.png') center center fixed;
 
 }
 
@@ -165,13 +165,13 @@ body {
 }
 
 .authors {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 2;
   margin-bottom: 1rem;
 }
 
 .author-link {
-  color: #333;
+  color: #05496d;
   text-decoration: none !important;
   border-bottom: none !important;
   transition: color 0.2s;
@@ -185,8 +185,8 @@ body {
   }
 
 .affiliations {
-  font-size: 1rem;
-  color: #666;
+  font-size: 1.3rem;
+  color: #3c494e;
   margin: 1rem 0;
   }
 

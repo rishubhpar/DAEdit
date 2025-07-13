@@ -51,7 +51,7 @@
     <div class="header-wrapper">
         <div class="header-container" id="header-container">
             <div class="header-content">
-                <h1 style="margin-top: 0px">Zero-Shot Depth-Aware Image Editing with Diffusion Models</h1>
+                <h1 style="margin-top: 0px; color: #f8f3f3">Zero-Shot Depth-Aware Image Editing with Diffusion Models</h1>
                 <!-- <h2>3D-Grounded Visual Editing and Generative Compositing </h2> -->
                 <!-- <p style="color: #FFF7D4">
                     A <strong style="color: #ffe099">3D-grounded
@@ -59,28 +59,34 @@
                     BlenderFusion employs a <strong style="color: #ffe099">layering-editing-compositing</strong> process:
                 </p> -->
 
-                <p style="color: #FFF7D4">
-                    Our method enables <strong style="color: #ffe099">precise depth control</strong>  over object placement and scene composition in a image. 
-                    It introduces a <strong style="color: #ffe099">zero-shot compositing strategy</strong> that fuses depth based layers using internal features of pretrained diffusion models, producing realistic results without the need for post-processing. 
+                <p style="color: #ffffff">
+                    Our method enables <strong style="color: #fdc554">precise depth control</strong>  over object placement and scene composition in a image. 
+                    It introduces a <strong style="color: #fdc554">zero-shot compositing strategy</strong> that fuses depth based layers using internal features of pretrained diffusion models, producing realistic results without the need for post-processing. 
                     We demonstrate high-quality edits in <em>scene compositing</em> and <em>object insertion</em>, achieving accurate depth ordering and visual consistency.
                 </p>
                 <div class="icon-container">
                     <div class="icon-item">
-                        <img src="static/img/icons/buffer.svg">
+                        <img src="static/img/icons/stack.svg">
                         <div>
-                            <strong>Depth-Guided Layer Decomposition</strong>: A novel layering method to decompose a given image into editable layers using its depth map and a user-specified depth value.
+                            <p style="color: #ffffff">
+                            <strong style="color: #fdc554">Depth-Guided Layer Decomposition</strong>: A novel layering method to decompose a given image into editable layers using its depth map and a user-specified depth value.
+                            </p>
                         </div>
                     </div>
                     <div class="icon-item">
                         <img src="static/img/icons/compose.svg">
                         <div>
-                            <strong>Feature-Guided Layer Compositing</strong>: A zero-shot method that leverages pretrained diffusion models to progressively blend multiple layers with feature guidance, ensuring photorealistic lighting and color harmonization.
+                            <p style="color: #ffffff">
+                            <strong style="color: #fdc554">Feature-Guided Layer Compositing</strong>: A zero-shot method that leverages pretrained diffusion models to progressively blend multiple layers with feature guidance, ensuring photorealistic lighting and color harmonization.
+                            </p>
                         </div>
                     </div>
                     <div class="icon-item">
                         <img src="static/img/icons/edit.svg">
                         <div>
-                            <strong>Depth-Aware Editing Applications</strong>: Demonstrates the effectiveness of depth-based layering in novel editing tasks such as object insertion and scene compositing at a user-specified depth.
+                            <p style="color: #ffffff">
+                            <strong style="color: #fdc554">Depth-Aware Editing Applications</strong>: Demonstrates the effectiveness of depth-based layering in novel editing tasks such as object insertion and scene compositing at a user-specified depth.
+                        </p>
                         </div>
                     </div>
                 </div>
@@ -139,18 +145,18 @@
     <div class="byline">
         <div class="byline-container">
             <p class="authors">
-                <a href="https://rishubhpar.github.io/" class="author-link" target="_blank">Rishubh Parihar<sup>1,†</sup></a> &emsp;
-                <a href="https://scholar.google.com/citations?user=Hup_9BkAAAAJ&hl=en" class="author-link" target="_blank">Sachidanand VS<sup>1</sup></a> &emsp;
-                <a href="https://cds.iisc.ac.in/faculty/venky/" class="author-link" target="_blank">Venkatesh Babu R<sup>1</sup></a> &emsp;
+                <a href="https://rishubhpar.github.io/" class="author-link" target="_blank">Rishubh Parihar<sup></sup></a> &emsp;
+                <a href="https://scholar.google.com/citations?user=Hup_9BkAAAAJ&hl=en" class="author-link" target="_blank">Sachidanand VS<sup></sup></a> &emsp;
+                <a href="https://cds.iisc.ac.in/faculty/venky/" class="author-link" target="_blank">Venkatesh Babu R<sup></sup></a> &emsp;
             </p>
             <div class="affiliations">
                 <p>
-                    <span class="affiliation-link"><sup>1</sup>Indian Institute of Science</span>
+                    <span class="affiliation-link"><sup></sup>Vision and AI Lab, IISc</span>
                 </p>
             </div>
-            <p class="author-notes" style="text-align: center;">
+            <!-- <p class="author-notes" style="text-align: center;">
                 <span class="author-note"><sup>†</sup>Corresponding authors</span>
-            </p>
+            </p> -->
         </div>
     </div>
     <!-- TL;DR Section -->
@@ -187,16 +193,17 @@
         The key idea is to integrate Depth-Guided Layer Decomposition (DeGLaD) in the feature space of diffusion models. Specifically, we propose Feature-Guided Layer Composition (FeatGLaC), 
         a layered guidance mechanism on the feature space of denoising UNet model which allows for image editing by progressively steering the 
         latents toward the desired edit while maintaining the orignal scene appearance throughout the denoising process. We validate our approach on 
-        two depth-aware editing tasks:
+        three depth-aware editing tasks:
     </p>
     <ul class="text" style="margin-top: 0em;">
-        <li><strong>Depth aware object Insertion</strong>: object insertion that preserves object and scene identity with seamless blending.</li>
-        <li><strong>Scene Composition</strong>: Depth-based compositing of two real scenes with accurate lighting.</li>
+        <li><strong>Object Insertion</strong>: Inserting an object at a specific depth layer while preserving both object and scene identity, with seamless blending.</li>
+        <li><strong>Scene Composition</strong>: Depth-based composition of two scenes, where the foreground and background is blended at user given depth layer following uniform lighting.</li>
+        <li><strong>Scene Relighting</strong>: Scene relighting, where the foreground seamlessly adopts the lighting characteristics of the background scene.</li>
     </ul>
     </div>
 
 
-    <h2 id="method-overview" class="text">Motivation </h2>
+    <h2 style="margin-top: 0.5em;" id="method-overview" class="text">Motivation </h2>
     <div id="motivation">
     <p class="text">
         Depth Guided Layer Decomposition (DeGLaD) is an efficient 2.5D scene representation that allows for depth-aware editing. 
@@ -206,7 +213,6 @@
         priors from pretrained image diffusion models via FeatGLaC. This enables depth-consistent, realistic
         scene compositions while preserving details in foreground and background regions. 
     </p>
-
     </div>
 
     <!-- Slider Section -->
@@ -232,10 +238,13 @@
         .slider-item {
             width: 100%;
             max-width: 400px;
+            margin: 0;
+            padding: 0;
         }
         img-comparison-slider {
             width: 100%;
             border-radius: 8px;
+            margin: 0;
         }
         figcaption1 {
             position: absolute;
@@ -280,7 +289,6 @@
         </div>
     </div>
 
-
     <script>
     window.MathJax = {
         tex: {
@@ -315,8 +323,8 @@
         In the following section, we detail our three steps that mirrors the <strong>layering-editing-compositing</strong> process of traditional visual compositing.
     </p>
     </div> -->
-    <h2 id="method-overview" class="text">Method Overview </h2>
-    <h3 id="layering" class="text first-subsection"><img src="static/img/icons/buffer.svg" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 10px;">Step 1: Depth-Guided Layer Decomposition</h3>
+    <h2 style="margin-top: 0.5em;" id="method-overview" class="text">Method Overview </h2>
+    <h3 id="layering" class="text first-subsection"><img src="static/img/icons/stack.svg" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 10px;">Step 1: Depth-Guided Layer Decomposition</h3>
     <p class="text">
        Scene depth serves as an effective representation to model the underlying scene geometry and enables enhanced control over 3D scene structure. 
        This motivates us to represent the scene as foreground and background layer based on user given depth. Given an input image,
@@ -369,7 +377,7 @@
         \]
     </p>
     <!--  -->
-    <h2 id="results" class="text">Results</h2>
+    <h2 style="margin-top: 0.2em;" id="results" class="text">Results</h2>
     <p class="text">
         We perform 4 depth aware editing using our method, which are all based on the layering-editing-compositing process described above.
     </p>
