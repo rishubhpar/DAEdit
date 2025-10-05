@@ -47,11 +47,27 @@
 
     <link rel="stylesheet" type="text/css" media="all" href="clarity/clarity.css" />
 </head>
+<style>
+    .section-tile h2 {
+        font-size: 1.8em !important;
+    }
+    .section-tile h3 {
+        font-size: 1.4em !important;
+    }
+</style>
 <body>
     <div class="header-wrapper">
-        <div class="header-container" id="header-container">
-            <div class="header-content">
+        <div class="header-container" id="header-container" style="background-color: rgba(26,26,26,0.8); display: flex; justify-content: space-between; align-items: center;">
+            <div class="header-content" style="flex: 1;">
                 <h1 style="margin-top: 0px; color: #f8f3f3">Zero-Shot Depth-Aware Image Editing with Diffusion Models</h1>
+                <br>
+                <h2 style="color: #f8f3f3">ICCV 2025</h2>
+                <p class="authors" style="color: #b3e0ff; font-size: 1.4em;">
+                    <a href="https://rishubhpar.github.io/" class="author-link" target="_blank" style="color: #b3e0ff;">Rishubh Parihar<sup></sup></a> &emsp;
+                    <a href="https://scholar.google.com/citations?user=Hup_9BkAAAAJ&hl=en" class="author-link" target="_blank" style="color: #b3e0ff;">Sachidanand VS<sup></sup></a> &emsp;
+                    <a href="https://cds.iisc.ac.in/faculty/venky/" class="author-link" target="_blank" style="color: #b3e0ff;">Venkatesh Babu R<sup></sup></a> &emsp;
+                </p>
+                <p style="color: #b3e0ff; font-size: 1.6em;">Vision and AI Lab, IISc</p>
                 <!-- <h2>3D-Grounded Visual Editing and Generative Compositing </h2> -->
                 <!-- <p style="color: #FFF7D4">
                     A <strong style="color: #ffe099">3D-grounded
@@ -60,55 +76,20 @@
                 </p> -->
 
                 <p style="color: #ffffff">
-                    Our method enables <strong style="color: #fdc554">precise depth control</strong>  over object placement and scene composition in a image. 
-                    It introduces a <strong style="color: #fdc554">zero-shot compositing strategy</strong> that fuses depth based layers using internal features of pretrained diffusion models, producing realistic results without the need for post-processing. 
+                    Our method enables <strong style="color: #7ec8e3">precise depth control</strong> over object placement and scene composition in an image. 
+                    It introduces a <strong style="color: #7ec8e3">zero-shot compositing strategy</strong> that fuses depth based layers using internal features of pretrained diffusion models, producing realistic results without the need for post-processing. 
                     We demonstrate high-quality edits in <em>scene compositing</em> and <em>object insertion</em>, achieving accurate depth ordering and visual consistency.
                 </p>
-                <div class="icon-container">
-                    <div class="icon-item">
-                        <img src="static/img/icons/stack.svg">
-                        <div>
-                            <p style="color: #ffffff">
-                            <strong style="color: #fdc554">Depth-Guided Layer Decomposition</strong>: A novel layering method to decompose a given image into editable layers using its depth map and a user-specified depth value.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="icon-item">
-                        <img src="static/img/icons/compose.svg">
-                        <div>
-                            <p style="color: #ffffff">
-                            <strong style="color: #fdc554">Feature-Guided Layer Compositing</strong>: A zero-shot method that leverages pretrained diffusion models to progressively blend multiple layers with feature guidance, ensuring photorealistic lighting and color harmonization.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="icon-item">
-                        <img src="static/img/icons/edit.svg">
-                        <div>
-                            <p style="color: #ffffff">
-                            <strong style="color: #fdc554">Depth-Aware Editing Applications</strong>: Demonstrates the effectiveness of depth-based layering in novel editing tasks such as object insertion and scene compositing at a user-specified depth.
-                        </p>
-                        </div>
-                    </div>
-                </div>
                 <br>
                 <div class="button-container">
                     <!-- replace pdf -->
-                    <a href="pdf/main_paper.pdf" class="button paper-link" target="_blank">
+                    <a href="pdf/main_paper.pdf" class="button paper-link" target="_blank" style="background-color: #b3eaff; color: #1a1a1a; border: none;">
                         <span class="icon is-small">
                             <i class="fas fa-file-pdf"></i>
                         </span>
                         <span>PDF</span>
-                    </a>
-
-                    <!-- replace arxiv -->
-                    <!-- <a href="https://arxiv.org/abs/2506.17450" class="button paper-link" target="_blank">
-                        <span class="icon is-small">
-                            <i class="ai ai-arxiv"></i>
-                        </span>
-                        arXiv
-                    </a> -->
-
-                    <a href="https://github.com/rishubhpar/Depth-Aware-Editing/tree/main" class="button paper-link" target="_blank">
+                    </a> 
+                    <a href="https://github.com/rishubhpar/Depth-Aware-Editing/tree/main" class="button paper-link" target="_blank" style="background-color: #b3eaff; color: #1a1a1a; border: none;">
                         <span class="icon is-small">
                             <i class="fab fa-github"></i> <!-- Font Awesome GitHub icon -->
                         </span>
@@ -117,52 +98,56 @@
 
                 </div>
             </div>
-            <div class="header-image">
+            <div class="header-image" style="flex: 1; max-width: 50%;">
                 <img src="static/img/mdf2.png" alt="Teaser Image" class="teaser-image">
             </div>
         </div>
     </div>
-<d-article>
-    <d-contents>
-        <nav>
-            <h4>Contents</h4>
-            <div class="nav-section"><a href="#abstract">Abstract</a></div>
-            <div class="nav-section"><a href="#motivation">Motivation</a></div>
-            <div class="nav-section"><a href="#method-overview">Method Overview</a></div>
-            <ul class="nav-subsections">
-                <li><a href="#layering">Step 1: Depth-Guided Layer Decomposition</a></li>
-                <li><a href="#editing">Step 2: Feature-Guided Layer Composition</a></li>
-            </ul>
-            <div class="nav-section"><a href="#results">Results Demos</a></div>
-            <ul class="nav-subsections">
-                <li><a href="#scene-composition">Scene Composition</a></li>
-                <li><a href="#scene-relighting">Scene Relighting</a></li>
-                <li><a href="#object-insertion">Depth aware object Insertion</a></li>
-                <li><a href="#object-movement">Moving Object in a scene</a></li>
-            </ul>
-        </nav>
-    </d-contents>
-    <div class="byline">
-        <div class="byline-container">
-            <p class="authors">
-                <a href="https://rishubhpar.github.io/" class="author-link" target="_blank">Rishubh Parihar<sup></sup></a> &emsp;
-                <a href="https://scholar.google.com/citations?user=Hup_9BkAAAAJ&hl=en" class="author-link" target="_blank">Sachidanand VS<sup></sup></a> &emsp;
-                <a href="https://cds.iisc.ac.in/faculty/venky/" class="author-link" target="_blank">Venkatesh Babu R<sup></sup></a> &emsp;
-            </p>
-            <div class="affiliations">
-                <p>
-                    <span class="affiliation-link"><sup></sup>Vision and AI Lab, IISc</span>
-                </p>
-            </div>
-            <!-- <p class="author-notes" style="text-align: center;">
-                <span class="author-note"><sup>†</sup>Corresponding authors</span>
-            </p> -->
-        </div>
-    </div>
+<!-- 
+    The contents-section is now moved to after the video and intro section.
+    Place this block immediately after the video section, before the Abstract.
+-->
+<!-- 
+<div class="contents-section" id="contents-section" 
+    style="
+        position: fixed;
+        top: 90px;
+        left: 24px;
+        width: 260px;
+        z-index: 1000;
+        background: #f8fbff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 1.2em 1.1em;
+        margin: 0;
+        max-height: 80vh;
+        overflow-y: auto;
+        font-size: 1em;
+    ">
+    <nav>
+        <h4 style="margin-top: 0; color: #1a3a5d;">Contents</h4>
+        <div class="nav-section"><a href="#abstract">Abstract</a></div>
+        <div class="nav-section"><a href="#motivation">Motivation</a></div>
+        <div class="nav-section"><a href="#method-overview">Method Overview</a></div>
+        <ul class="nav-subsections" style="margin-bottom: 0.5em; padding-left: 1em;">
+            <li><a href="#layering">Step 1: Depth-Guided Layer Decomposition</a></li>
+            <li><a href="#editing">Step 2: Feature-Guided Layer Composition</a></li>
+        </ul>
+        <div class="nav-section"><a href="#results">Results Demos</a></div>
+        <ul class="nav-subsections" style="padding-left: 1em;">
+            <li><a href="#scene-composition">Scene Composition</a></li>
+            <li><a href="#scene-relighting">Scene Relighting</a></li>
+            <li><a href="#object-insertion">Depth aware object Insertion</a></li>
+            <li><a href="#object-movement">Moving Object in a scene</a></li>
+        </ul>
+    </nav>
+</div>
+-->
+
     <!-- TL;DR Section -->
-    <div class="tldr-section">
-        <div class="tldr-container">
-            <div class="tldr-content">
+    <div class="tldr-section" style="margin-top: 0;">
+        <div class="tldr-container" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+            <div class="tldr-content" style="width: 100%; max-width: 1080px; margin: 0 auto;">
                 <video 
                     controls 
                     autoplay 
@@ -172,538 +157,509 @@
                     webkit-playsinline 
                     preload="metadata" 
                     class="demo-video"
+                    style="width: 100%; max-width: 1080px; height: auto; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.15); object-fit: contain;"
                 >
                     <source src="static/video/slides.mp4" type="video/mp4">
                     <!-- <source src="static/video/demo.webm" type="video/webm"> -->
                     Your browser does not support the video tag.
                 </video>
-                <div class="video-caption">
-                    <strong>TL;DR:</strong> We present a zero-shot framework for realistic, depth-aware image editing using a novel feature-guidance technique (FeatGLaC) that enables seamless object insertion and depth-based scene compositing while preserving scene identity.
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap main sections in tiles -->
+<d-article>
+    <div class="section-tile">
+        <h2 id="abstract" class="text">Abstract</h2>
+        <div id="abstract"></div>
+        <p class="text">
+            In this work, we introduce a generalized zero-shot framework for depth-aware image editing. Our approach enables realistic scene editing, 
+            such as object insertion at specific depths and blending a scene's foreground with another's background while preserving the identity of the input scene. 
+            The key idea is to integrate Depth-Guided Layer Decomposition (DeGLaD) in the feature space of diffusion models. Specifically, we propose Feature-Guided Layer Composition (FeatGLaC), 
+            a layered guidance mechanism on the feature space of denoising UNet model which allows for image editing by progressively steering the 
+            latents toward the desired edit while maintaining the orignal scene appearance throughout the denoising process. We validate our approach on 
+            three depth-aware editing tasks:
+        </p>
+        <ul class="text" style="margin-top: 0em;">
+            <li><strong>Object Insertion</strong>: Inserting an object at a specific depth layer while preserving both object and scene identity, with seamless blending.</li>
+            <li><strong>Scene Composition</strong>: Depth-based composition of two scenes, where the foreground and background is blended at user given depth layer following uniform lighting.</li>
+            <li><strong>Scene Relighting</strong>: Scene relighting, where the foreground seamlessly adopts the lighting characteristics of the background scene.</li>
+        </ul>
+    </div>
+
+    <div class="section-tile">
+        <h2 id="motivation" class="text">Motivation</h2>
+        <div id="motivation">
+            <p class="text">
+                Depth Guided Layer Decomposition (DeGLaD) is an efficient 2.5D scene representation that allows for depth-aware editing. 
+                However, when directly applied in the pixel space, it struggles to model the accurate foreground and 
+                background scene interactions, particularly in terms of scene lighting, color harmonization, 
+                and shadow generation (as shown below). To address this, our approach leverages the rich image generation
+                priors from pretrained image diffusion models via FeatGLaC. This enables depth-consistent, realistic
+                scene compositions while preserving details in foreground and background regions. 
+            </p>
+        </div>
+
+        <!-- Slider Section -->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@img-comparison-slider/component@7.1.0/dist/index.js"></script>
+        <style>
+            .slider-section-wrapper {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0;
+            }
+            .slider-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+                gap: 32px;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 0;
+                justify-items: center;
+                align-items: start;
+            }
+            .slider-item {
+                width: 100%;
+                max-width: 400px;
+                margin: 0;
+                padding: 0;
+            }
+            img-comparison-slider {
+                width: 100%;
+                border-radius: 8px;
+                margin: 0;
+            }
+            figcaption1 {
+                position: absolute;
+                bottom: 8px;
+                left: 12px;
+                color: white;
+                font-size: 14px;
+                text-shadow: 0 0 4px black;
+            }
+        </style>
+        <p style="color: indigo; font-style: italic; font-size: 18px; text-align: center;">
+            Drag the slider to see the comparison with DeGLaD in Image space.
+        </p>
+        <div class="slider-section-wrapper">
+            <div class="slider-grid">
+                <div class="slider-item">
+                    <h3 style="text-align: center;">Scene Compositing</h3>
+                    <img-comparison-slider>
+                        <figure slot="first">
+                            <img src="assets/figures/comp/image_mpi_1.png" style="width: 100%">
+                            <figcaption1>Pixel α compositing</figcaption1>
+                        </figure>
+                        <figure slot="second">
+                            <img src="assets/figures/comp/ours_1.png" style="width: 100%">
+                            <figcaption1>FeatGLaC (Ours)</figcaption1>
+                        </figure>
+                    </img-comparison-slider>
+                </div>
+                <div class="slider-item">
+                    <h3 style="text-align: center;">Object Insertion</h3>
+                    <img-comparison-slider>
+                        <figure slot="first">
+                            <img src="assets/figures/comp/image_mpi_4.png" style="width: 100%">
+                            <figcaption1>Pixel α compositing</figcaption1>
+                        </figure>
+                        <figure slot="second">
+                            <img src="assets/figures/comp/ours_4.png" style="width: 100%">
+                            <figcaption1>FeatGLaC (Ours)</figcaption1>
+                        </figure>
+                    </img-comparison-slider>
                 </div>
             </div>
         </div>
     </div>
-    
 
-    <h2 id="method-overview" class="text">Abstract </h2>
-    <div id="abstract"></div>
-    <p class="text">
-        In this work, we introduce a generalized zero-shot framework for depth-aware image editing. Our approach enables realistic scene editing, 
-        such as object insertion at specific depths and blending a scene's foreground with another's background while preserving the identity of the input scene. 
-        The key idea is to integrate Depth-Guided Layer Decomposition (DeGLaD) in the feature space of diffusion models. Specifically, we propose Feature-Guided Layer Composition (FeatGLaC), 
-        a layered guidance mechanism on the feature space of denoising UNet model which allows for image editing by progressively steering the 
-        latents toward the desired edit while maintaining the orignal scene appearance throughout the denoising process. We validate our approach on 
-        three depth-aware editing tasks:
-    </p>
-    <ul class="text" style="margin-top: 0em;">
-        <li><strong>Object Insertion</strong>: Inserting an object at a specific depth layer while preserving both object and scene identity, with seamless blending.</li>
-        <li><strong>Scene Composition</strong>: Depth-based composition of two scenes, where the foreground and background is blended at user given depth layer following uniform lighting.</li>
-        <li><strong>Scene Relighting</strong>: Scene relighting, where the foreground seamlessly adopts the lighting characteristics of the background scene.</li>
-    </ul>
-    </div>
-
-
-    <h2 style="margin-top: 0.5em;" id="method-overview" class="text">Motivation </h2>
-    <div id="motivation">
-    <p class="text">
-        Depth Guided Layer Decomposition (DeGLaD) is an efficient 2.5D scene representation that allows for depth-aware editing. 
-        However, when directly applied in the pixel space, it struggles to model the accurate foreground and 
-        background scene interactions, particularly in terms of scene lighting, color harmonization, 
-        and shadow generation (as shown below). To address this, our approach leverages the rich image generation
-        priors from pretrained image diffusion models via FeatGLaC. This enables depth-consistent, realistic
-        scene compositions while preserving details in foreground and background regions. 
-    </p>
-    </div>
-
-    <!-- Slider Section -->
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@img-comparison-slider/component@7.1.0/dist/index.js"></script>
-    <style>
-        .slider-section-wrapper {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-        }
-        .slider-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 32px;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0;
-            justify-items: center;
-            align-items: start;
-        }
-        .slider-item {
-            width: 100%;
-            max-width: 400px;
-            margin: 0;
-            padding: 0;
-        }
-        img-comparison-slider {
-            width: 100%;
-            border-radius: 8px;
-            margin: 0;
-        }
-        figcaption1 {
-            position: absolute;
-            bottom: 8px;
-            left: 12px;
-            color: white;
-            font-size: 14px;
-            text-shadow: 0 0 4px black;
-        }
-    </style>
-    <p style="color: indigo; font-style: italic; font-size: 18px; text-align: center;">
-        Drag the slider to see the comparison with DeGLaD in Image space.
-    </p>
-    <div class="slider-section-wrapper">
-        <div class="slider-grid">
-            <div class="slider-item">
-                <h3 style="text-align: center;">Scene Compositing</h3>
-                <img-comparison-slider>
-                    <figure slot="first">
-                        <img src="assets/figures/comp/image_mpi_1.png" style="width: 100%">
-                        <figcaption1>Pixel α compositing</figcaption1>
-                    </figure>
-                    <figure slot="second">
-                        <img src="assets/figures/comp/ours_1.png" style="width: 100%">
-                        <figcaption1>FeatGLaC (Ours)</figcaption1>
-                    </figure>
-                </img-comparison-slider>
-            </div>
-            <div class="slider-item">
-                <h3 style="text-align: center;">Object Insertion</h3>
-                <img-comparison-slider>
-                    <figure slot="first">
-                        <img src="assets/figures/comp/image_mpi_4.png" style="width: 100%">
-                        <figcaption1>Pixel α compositing</figcaption1>
-                    </figure>
-                    <figure slot="second">
-                        <img src="assets/figures/comp/ours_4.png" style="width: 100%">
-                        <figcaption1>FeatGLaC (Ours)</figcaption1>
-                    </figure>
-                </img-comparison-slider>
-            </div>
+    <div class="section-tile">
+        <h2 id="method-overview" class="text">Method Overview</h2>
+        <h3 id="layering" class="text first-subsection"><img src="static/img/icons/stack.svg" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 10px;">Step 1: Depth-Guided Layer Decomposition</h3>
+        <p class="text">
+           Scene depth serves as an effective representation to model the underlying scene geometry and enables enhanced control over 3D scene structure. 
+           This motivates us to represent the scene as foreground and background layer based on user given depth. Given an input image,
+           its depth map, and a user-specified depth d, DeGLaD decomposes the image into foreground (depth < d) and background (depth > d) layers
+           based on the scene depth. This decomposition enables precise depth-aware editing via independent editing of each layer,
+        </p>
+         <p>
+            \[
+            \mathbf{M_{\text{fg}}(i,j)} = \mathbb{I} \left( D(i,j) &lt; d \right), \quad
+            \mathbf{M_{\text{bg}}(i,j)} = \mathbb{I} \left( D(i,j) \geq d \right)
+            \]
+        </p>
+        <div class="responsive-image-container">
+            <figure style="margin: 0; background: transparent; border: none; padding: 0;">
+                <img src="static/img/website1.png" alt="Step 1" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            </figure>
+            <figcaption style="text-align: center; margin: 10px 0 0 0; padding: 0; font-style: italic; color: #666; font-size: 0.9em; background: none; border: none; box-shadow: none;">
+                <strong>Step 1: Depth-Guided Layer Decomposition:</strong> Obtain foreground and background layer based on user given depth.
+            </figcaption>
         </div>
+        <h3 id="editing" class="text"><img src="static/img/icons/compose.svg" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 10px;">Step 2: Feature guided Layer Composition</h3>
+        <p class="text">
+            We introduce Feature-Guided Layer Composition (FeatGLaC), a layered representation embedded in the feature space of the 
+                denoising U-Net within diffusion models. These layered feature representation enables precise control over
+                the generated image.  However, directly α compsiting the layers during generation can push the latents outside the original 
+                distribution, resulting in unnatural editing results. To address this, we propose a softer way to edit the diffusion 
+                latents with FeatGLaC which is a guidance mechanism, where the diffusion latents are progressively steered toward the desired edit at each 
+                denoising step. 
+        </p>
+        <div class="responsive-image-container">
+            <figure style="margin: 0; background: transparent; border: none; padding: 0;">
+                <img src="static/img/website2.png" alt="Step 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            </figure>
+            <figcaption style="text-align: center; margin: 10px 0 0 0; padding: 0; font-style: italic; color: #666; font-size: 0.9em; background: none; border: none; box-shadow: none;">
+                <strong>Step 2: Feature guided Layer Composition:</strong> Guide the foreground layer based of based on the task specific mask obtained from DeGLaD.
+            </figcaption>
+        </div>
+        
+        <p>
+            <span style="color: blue; font-weight: bold; font-style: italic;">Intuition:</span>
+            <span style="font-style: italic;">
+                We force the foreground layer ($fg$) of $\Psi^{c}_{i,t}$ to be close to the foreground layer of $\Psi_{i,t}^a$
+                and the background layer ($bg$) of $\Psi^{c}_{i,t}$ to be close to the background layer of $\Psi_{i,t}^b$
+                as shown in above Fig. This is implemented by defining $\mathcal{G}$ :
+            </span>
+            </p>
+            \[
+                \sum_i \left\| \mathbf{M^a_{fg}} \cdot (\Psi^{a}_{i,t} - \Psi^{c}_{i,t}) \right\|^2 +  
+                \left\| \mathbf{M^b_{bg}} \cdot (\Psi^{b}_{i,t} - \Psi^{c}_{i,t}) \right\|^2
+            \]
+        </p>
+        <!--  -->
     </div>
 
-    <script>
-    window.MathJax = {
-        tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
-    };
-    </script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
+    <div class="section-tile">
+        <h2 id="results" class="text">Results</h2>
+        <p class="text">
+            We perform 4 depth aware editing using our method, which are all based on the layering-editing-compositing process described above.
+        </p>
+        <ul class="text" style="margin-top: 0em;">
+            <li><strong>Depth-Aware Scene Composition</strong> </li>
+            <li><strong>Scene Relighting</strong></li>
+            <li><strong>Depth-Aware Object Insertion </strong></li>
+            <li><strong>Placing Object at different locations</strong></li>
+        </ul>
+        
+        <div class="container blog main">
+            <h2 id="scene-composition"  style="text-align: center;">
+                Depth-Aware Scene Composition
+            </h2>
+            
+            <p class="text", style="text-align: justify;">
+            Our method generates realistic depth-aware scene composite image with natural illumination interactions and preserving the foreground and background conents.
+            </p>
+        </div>
 
-    <!-- <p class="text">
-        Despite tremendous progress in image generation and editing, precise visual compositing remains challenging for state-of-the-art models with text interface. Look at the following example with GPT-4o image generation, results are obtained on June 9th, 2025 through the ChatGPT App<d-cite key="openai2024gpt4o-image"></d-cite>.
-    </p>
-    <div class="responsive-image-container">
-        <figure style="margin: 0; background: transparent; border: none; padding: 0;">
-            <img src="static/img/t2i_compositing_example.jpg" alt="T2I Compositing Example" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-        </figure>
-        <figcaption style="text-align: center; margin: 10px 0 0 0; padding: 0; font-style: italic; color: #666; font-size: 0.9em; background: none; border: none; box-shadow: none;">
-            <strong>Challenges in text-based visual compositing:</strong> While advanced text-to-image models excel at semantic-level control, they struggle with geometric-level instructions for precise spatial relationships, object poses, and camera viewpoints—demonstrating the inadequacy of text interfaces for complex visual compositing tasks.
-        </figcaption>
-    </div>
-    <p class="text">
-        While state-of-the-art text-to-image models excel at semantic-level control and can iteratively correct object appearance or shape, they struggle with geometric-level instructions due to limited 3D understanding.
-        Moreover, text interfaces are inherently inadequate for precise geometric control and complex compositing—describing spatial relationships, object geometries or poses, and camera viewpoints through text prompts is often tedious, ambiguous, and imprecise.
-    </p>
-    <p class="text">
-        BlenderFusion addresses these limitation by <strong>combining the best of both worlds</strong>: we decompose visual compositing into <strong>3D-grounded editing</strong> and <strong>generative synthesis</strong>. 
-        Instead of relying solely on text prompts, we leverage graphics engines (Blender) for precise geometric control and flexible manipulation, then employ diffusion models as a generative compositor to synthesize the final photorealistic result.
-        This approach provides flexible and fine-grained control over objects, camera, and background, while harnessing the powerful synthesis capabilities of modern generative models.
-        In the following section, we detail our three steps that mirrors the <strong>layering-editing-compositing</strong> process of traditional visual compositing.
-    </p>
-    </div> -->
-    <h2 style="margin-top: 0.5em;" id="method-overview" class="text">Method Overview </h2>
-    <h3 id="layering" class="text first-subsection"><img src="static/img/icons/stack.svg" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 10px;">Step 1: Depth-Guided Layer Decomposition</h3>
-    <p class="text">
-       Scene depth serves as an effective representation to model the underlying scene geometry and enables enhanced control over 3D scene structure. 
-       This motivates us to represent the scene as foreground and background layer based on user given depth. Given an input image,
-       its depth map, and a user-specified depth d, DeGLaD decomposes the image into foreground (depth < d) and background (depth > d) layers
-       based on the scene depth. This decomposition enables precise depth-aware editing via independent editing of each layer,
-    </p>
-     <p>
-        \[
-        \mathbf{M_{\text{fg}}(i,j)} = \mathbb{I} \left( D(i,j) &lt; d \right), \quad
-        \mathbf{M_{\text{bg}}(i,j)} = \mathbb{I} \left( D(i,j) \geq d \right)
-        \]
-    </p>
-    <div class="responsive-image-container">
-        <figure style="margin: 0; background: transparent; border: none; padding: 0;">
-            <img src="static/img/website1.png" alt="Step 1" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-        </figure>
-        <figcaption style="text-align: center; margin: 10px 0 0 0; padding: 0; font-style: italic; color: #666; font-size: 0.9em; background: none; border: none; box-shadow: none;">
-            <strong>Step 1: Depth-Guided Layer Decomposition:</strong> Obtain foreground and background layer based on user given depth.
-        </figcaption>
-    </div>
-    <h3 id="editing" class="text"><img src="static/img/icons/compose.svg" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 10px;">Step 2: Feature guided Layer Composition</h3>
-    <p class="text">
-        We introduce Feature-Guided Layer Composition (FeatGLaC), a layered representation embedded in the feature space of the 
-            denoising U-Net within diffusion models. These layered feature representation enables precise control over
-            the generated image.  However, directly α compsiting the layers during generation can push the latents outside the original 
-            distribution, resulting in unnatural editing results. To address this, we propose a softer way to edit the diffusion 
-            latents with FeatGLaC which is a guidance mechanism, where the diffusion latents are progressively steered toward the desired edit at each 
-            denoising step. 
-    </p>
-    <div class="responsive-image-container">
-        <figure style="margin: 0; background: transparent; border: none; padding: 0;">
-            <img src="static/img/website2.png" alt="Step 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-        </figure>
-        <figcaption style="text-align: center; margin: 10px 0 0 0; padding: 0; font-style: italic; color: #666; font-size: 0.9em; background: none; border: none; box-shadow: none;">
-            <strong>Step 2: Feature guided Layer Composition:</strong> Guide the foreground layer based of based on the task specific mask obtained from DeGLaD.
-        </figcaption>
-    </div>
-    
-    <p>
-        <span style="color: blue; font-weight: bold; font-style: italic;">Intuition:</span>
-        <span style="font-style: italic;">
-            We force the foreground layer ($fg$) of $\Psi^{c}_{i,t}$ to be close to the foreground layer of $\Psi_{i,t}^a$
-            and the background layer ($bg$) of $\Psi^{c}_{i,t}$ to be close to the background layer of $\Psi_{i,t}^b$
-            as shown in above Fig. This is implemented by defining $\mathcal{G}$ :
-        </span>
-        </p>
-        \[
-            \sum_i \left\| \mathbf{M^a_{fg}} \cdot (\Psi^{a}_{i,t} - \Psi^{c}_{i,t}) \right\|^2 +  
-            \left\| \mathbf{M^b_{bg}} \cdot (\Psi^{b}_{i,t} - \Psi^{c}_{i,t}) \right\|^2
-        \]
-    </p>
-    <!--  -->
-    <h2 style="margin-top: 0.2em;" id="results" class="text">Results</h2>
-    <p class="text">
-        We perform 4 depth aware editing using our method, which are all based on the layering-editing-compositing process described above.
-    </p>
-    <ul class="text" style="margin-top: 0em;">
-        <li><strong>Depth-Aware Scene Composition</strong> </li>
-        <li><strong>Scene Relighting</strong></li>
-        <li><strong>Depth-Aware Object Insertion </strong></li>
-        <li><strong>Placing Object at different locations</strong></li>
-    </ul>
-    
-    <div class="container blog main">
-        <h2 id="scene-composition"  style="text-align: center;">
-            Depth-Aware Scene Composition
-        </h2>
         
-        <p class="text", style="text-align: justify;">
-        Our method generates realistic depth-aware scene composite image with natural illumination interactions and preserving the foreground and background conents.
-        </p>
-    </div>
-
-    
-    <div class="container blog main gray extra-large">
-        
-        <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
-            Hover over the background images to compose the scene with selected background image.
-        </p>
-                
-        <p class="text" style="text-align: center; color: brown; font-weight: bold;">
-            [Please wait for a few minutes to load all the images]
-        </p>
-        
-        <div class="grid2x3-container" id="grid2x3">
-            <!-- Currently using only two grid, as it looks good in high quality--> 
-            <!-- Grid Item 1 -->
-            <!-- <div class="grid2x3-item">
-                <div class="grid2x3-image-container">
-                    <div class="grid2x3-thumbnails-wrapper">
-                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
-                        <div class="grid2x3-thumbnails-container">
-                            <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_1.png">
-                            <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_3.png">
-                            <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_5.png">
+        <div class="container blog main gray extra-large">
+            
+            <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
+                Hover over the background images to compose the scene with selected background image.
+            </p>
+                    
+            <p class="text" style="text-align: center; color: brown; font-weight: bold;">
+                [Please wait for a few minutes to load all the images]
+            </p>
+            
+            <div class="grid2x3-container" id="grid2x3">
+                <!-- Currently using only two grid, as it looks good in high quality--> 
+                <!-- Grid Item 1 -->
+                <!-- <div class="grid2x3-item">
+                    <div class="grid2x3-image-container">
+                        <div class="grid2x3-thumbnails-wrapper">
+                            <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                            <div class="grid2x3-thumbnails-container">
+                                <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_1.png">
+                                <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_3.png">
+                                <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_5.png">
+                            </div>
+                        </div>
+                        <div class="grid2x3-large-image-wrapper">
+                            <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                            <img src="assets/figures/sc/src/2.png" alt="Large Image 1" class="grid2x3-large-image" id="grid2x3-large-image-1">
                         </div>
                     </div>
-                    <div class="grid2x3-large-image-wrapper">
-                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
-                        <img src="assets/figures/sc/src/2.png" alt="Large Image 1" class="grid2x3-large-image" id="grid2x3-large-image-1">
-                    </div>
-                </div>
-            </div> -->
-            <!-- Repeat Grid Items 2 to 6 -->
-            <!-- Grid Item 2 -->
-            <div class="grid2x3-item">
-                <div class="grid2x3-image-container">
-                    <div class="grid2x3-thumbnails-wrapper">
-                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
-                        <div class="grid2x3-thumbnails-container">
-                            <img src="assets/figures/sc/ref/3_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/3_1.png">
-                            <img src="assets/figures/sc/ref/3_ref2.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/3_2.jpg">
-                            <img src="assets/figures/sc/ref/3_ref3.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/3_3.png">
+                </div> -->
+                <!-- Repeat Grid Items 2 to 6 -->
+                <!-- Grid Item 2 -->
+                <div class="grid2x3-item">
+                    <div class="grid2x3-image-container">
+                        <div class="grid2x3-thumbnails-wrapper">
+                            <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                            <div class="grid2x3-thumbnails-container">
+                                <img src="assets/figures/sc/ref/3_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/3_1.png">
+                                <img src="assets/figures/sc/ref/3_ref2.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/3_2.jpg">
+                                <img src="assets/figures/sc/ref/3_ref3.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/3_3.png">
+                            </div>
+                        </div>
+                        <div class="grid2x3-large-image-wrapper">
+                            <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                            <img src="assets/figures/sc/src/3.jpg" alt="Large Image 3" class="grid2x3-large-image" id="grid2x3-large-image-3">
                         </div>
                     </div>
-                    <div class="grid2x3-large-image-wrapper">
-                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
-                        <img src="assets/figures/sc/src/3.jpg" alt="Large Image 3" class="grid2x3-large-image" id="grid2x3-large-image-3">
-                    </div>
                 </div>
-            </div>
 
-            <div class="grid2x3-item">
-                <div class="grid2x3-image-container">
-                    <div class="grid2x3-thumbnails-wrapper">
-                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
-                        <div class="grid2x3-thumbnails-container">
-                            <img src="assets/figures/sc/ref/t_ref2.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t2.png">
-                            <img src="assets/figures/sc/ref/t_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t3.png">
-                            <img src="assets/figures/sc/ref/t_ref4.png" alt="Thumbnail 3" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t4.png">
+                <div class="grid2x3-item">
+                    <div class="grid2x3-image-container">
+                        <div class="grid2x3-thumbnails-wrapper">
+                            <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                            <div class="grid2x3-thumbnails-container">
+                                <img src="assets/figures/sc/ref/t_ref2.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t2.png">
+                                <img src="assets/figures/sc/ref/t_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t3.png">
+                                <img src="assets/figures/sc/ref/t_ref4.png" alt="Thumbnail 3" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t4.png">
+                            </div>
+                        </div>
+                        <div class="grid2x3-large-image-wrapper">
+                            <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                            <img src="assets/figures/sc/src/t.jpg" alt="Large Image 2" class="grid2x3-large-image" id="grid2x3-large-image-2">
                         </div>
                     </div>
-                    <div class="grid2x3-large-image-wrapper">
-                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
-                        <img src="assets/figures/sc/src/t.jpg" alt="Large Image 2" class="grid2x3-large-image" id="grid2x3-large-image-2">
-                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
 
-    <div class="container blog main">
-        <h2 id="scene-relighting" style="text-align: center;">
-            Scene Relighting
-        </h2>
+        <div class="container blog main">
+            <h2 id="scene-relighting" style="text-align: center;">
+                Scene Relighting
+            </h2>
+            
+            <p class="text", style="text-align: justify;">
+                Our method can also be used for scene relighting, where we want to relight the foreground scene based on the background illumination.
+            </p>
+        </div>
+
+        <div class="container blog main gray extra-large">
+            
+            <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
+                Hover over the background image to relight the foreground image in the same illumination.
+            </p>
+
+            <p class="text" style="text-align: center; color: brown; font-weight: bold;">
+                [Please wait for a few minutes to load all the images]
+            </p>
+            
+            <div class="grid1x3-container" id="grid1x3">
+                <!-- Currently using only two grid, as it looks good in high quality--> 
+                <!-- Grid Item 1 -->
+                <!-- <div class="grid2x3-item">
+                    <div class="grid2x3-image-container">
+                        <div class="grid2x3-thumbnails-wrapper">
+                            <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                            <div class="grid2x3-thumbnails-container">
+                                <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_1.png">
+                                <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_3.png">
+                                <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
+                                    data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_5.png">
+                            </div>
+                        </div>
+                        <div class="grid2x3-large-image-wrapper">
+                            <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                            <img src="assets/figures/sc/src/2.png" alt="Large Image 1" class="grid2x3-large-image" id="grid2x3-large-image-1">
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Repeat Grid Items 2 to 6 -->
+                <!-- Grid Item 2 -->
+                <div class="grid1x3-item">
+                    <div class="grid1x3-image-container">
+                        <div class="grid1x3-thumbnails-wrapper">
+                            <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                            <div class="grid1x3-thumbnails-container">
+                                <img src="assets/figures/sr/ref/2_ref4.png" alt="Thumbnail 1" class="grid1x3-thumbnail"
+                                    data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/3_4.png">
+                                <img src="assets/figures/sr/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid1x3-thumbnail"
+                                    data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/3_2.png">
+                                <img src="assets/figures/sr/ref/9_ref4.jpg" alt="Thumbnail 3" class="grid1x3-thumbnail"
+                                    data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/3_3.png">
+                            </div>
+                        </div>
+                        <div class="grid1x3-large-image-wrapper">
+                            <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                            <img src="assets/figures/sr/src/3.png" alt="Large Image 2" class="grid1x3-large-image" id="grid1x3-large-image-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="grid1x3-item">
+                    <div class="grid1x3-image-container">
+                        <div class="grid1x3-thumbnails-wrapper">
+                            <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                            <div class="grid1x3-thumbnails-container">
+                                <img src="assets/figures/sr/ref/2_ref1.png" alt="Thumbnail 1" class="grid1x3-thumbnail"
+                                    data-target="grid1x3-large-image-3" data-hover-src="assets/figures/sr/res/2_1.png">
+                                <img src="assets/figures/sr/ref/2_ref2.jpg" alt="Thumbnail 2" class="grid1x3-thumbnail"
+                                    data-target="grid1x3-large-image-3" data-hover-src="assets/figures/sr/res/2_2.png">
+                                <img src="assets/figures/sr/ref/2_ref3.jpg" alt="Thumbnail 3" class="grid1x3-thumbnail"
+                                    data-target="grid1x3-large-image-3" data-hover-src="assets/figures/sr/res/2_3.png">
+                            </div>
+                        </div>
+                        <div class="grid1x3-large-image-wrapper">
+                            <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                            <img src="assets/figures/sr/src/2.png" alt="Large Image 3" class="grid1x3-large-image" id="grid1x3-large-image-3">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container blog main">
+            <h2 id="object-insertion" style="text-align: center;">
+                Depth-Aware Object Insertion 
+            </h2>
+            <p class="text", style="text-align: justify;">
+                Given a single object image, our method can realistically insert the object at a precise depth, with natural blending with scene content, color harmonization, and appropriate shadows. 
+            </p>
+        </div>  
+
+            
+        <div class="container blog main gray extra-large">
+            <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
+                Hower over the object thumbnail image to insert it in the scene. 
+            </p>
+            <div class="columns-4">
+                <!-- Grid Item 1 -->
+                <div class="grid-item">
+                    <div class="image-wrapper">
+                        <img src="assets/figures/ob/src/4_src.png" alt="Main Image 1" class="main-image" id="large-image-1">
+                        <div class="overlay-container">
+                            <img src="assets/figures/ob/ref/4_ref.png" alt="Small Image 1" class="small-image"
+                                 data-target="large-image-1" data-hover-src="assets/figures/ob/res/4_res.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid Item 2 -->
+                <div class="grid-item">
+                    <div class="image-wrapper">
+                        <img src="assets/figures/ob/src/1_src.png" alt="Main Image 2" class="main-image" id="large-image-2">
+                        <div class="overlay-container">
+                            <img src="assets/figures/ob/ref/1_ref.png" alt="Small Image 2" class="small-image"
+                                 data-target="large-image-2" data-hover-src="assets/figures/ob/res/1_res.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid Item 3 -->
+                <div class="grid-item">
+                    <div class="image-wrapper">
+                        <img src="assets/figures/ob/src/3_src.png" alt="Main Image 3" class="main-image" id="large-image-3">
+                        <div class="overlay-container">
+                            <img src="assets/figures/ob/ref/3_ref.png" alt="Small Image 3" class="small-image"
+                                 data-target="large-image-3" data-hover-src="assets/figures/ob/res/3_res.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid Item 4 -->
+                <div class="grid-item">
+                    <div class="image-wrapper">
+                        <img src="assets/figures/ob/src/2_src.png" alt="Main Image 4" class="main-image" id="large-image-4">
+                        <div class="overlay-container">
+                            <img src="assets/figures/ob/ref/2_ref.png" alt="Small Image 4" class="small-image"
+                                 data-target="large-image-4" data-hover-src="assets/figures/ob/res/2_res.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for additional grid items -->
+            </div>
+
+            <div class="columns-4">
+                <!-- Grid Item 1 -->
+                <div class="grid-item">
+                    <div class="image-wrapper">
+                        <img src="assets/figures/ob/src/5_src.png" alt="Main Image 5" class="main-image" id="large-image-5">
+                        <div class="overlay-container">
+                            <img src="assets/figures/ob/ref/5_ref.png" alt="Small Image 5" class="small-image"
+                                 data-target="large-image-5" data-hover-src="assets/figures/ob/res/5_res.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid Item 2 -->
+                <div class="grid-item">
+                    <div class="image-wrapper">
+                        <img src="assets/figures/ob/src/6_src.png" alt="Main Image 6" class="main-image" id="large-image-6">
+                        <div class="overlay-container">
+                            <img src="assets/figures/ob/ref/6_ref.png" alt="Small Image 6" class="small-image"
+                                 data-target="large-image-6" data-hover-src="assets/figures/ob/res/6_res.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid Item 3 -->
+                <div class="grid-item">
+                    <div class="image-wrapper">
+                        <img src="assets/figures/ob/src/9_src.png" alt="Main Image 7" class="main-image" id="large-image-7">
+                        <div class="overlay-container">
+                            <img src="assets/figures/ob/ref/9_ref.png" alt="Small Image 7" class="small-image"
+                                 data-target="large-image-7" data-hover-src="assets/figures/ob/res/9_res.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid Item 4 -->
+                <div class="grid-item">
+                    <div class="image-wrapper">
+                        <img src="assets/figures/ob/src/8_src.png" alt="Main Image 8" class="main-image" id="large-image-8">
+                        <div class="overlay-container">
+                            <img src="assets/figures/ob/ref/8_ref.png" alt="Small Image 8" class="small-image"
+                                 data-target="large-image-8" data-hover-src="assets/figures/ob/res/8_res.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for additional grid items -->
+            </div>
+        </div>
         
-        <p class="text", style="text-align: justify;">
-            Our method can also be used for scene relighting, where we want to relight the foreground scene based on the background illumination.
-        </p>
-    </div>
-
-    <div class="container blog main gray extra-large">
+        <!-- For object moving -->
+        <div class="container blog main gray extra-large">
+            <h2 id="object-movement" style="text-align: center;">
+                Placing Object at different locations
+            </h2>
+            <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
+                Hover over the image to move the placed object in the scene. 
+            </p>
+            <div class="grid1x3-container_new" id="new-grid1x3">
+                <!-- Grid Item 1 -->
+                <div class="grid1x3-item-move">
+                    <div class="grid1x3-image-container">
+                        <img src="assets/figures/obm/src/1_src.png" 
+                             alt="Main Image 1" 
+                             class="hover-image" 
+                             data-hover-src="assets/figures/obm/res/1_res.png">
+                    </div>
+                </div>
+                <!-- Grid Item 2 -->
+                <div class="grid1x3-item-move">
+                    <div class="grid1x3-image-container">
+                        <img src="assets/figures/obm/src/7_src.png" 
+                             alt="Main Image 2" 
+                             class="hover-image" 
+                             data-hover-src="assets/figures/obm/res/7_res.png">
+                    </div>
+                </div>
+                <!-- Grid Item 3 -->
+                <div class="grid1x3-item-move">
+                    <div class="grid1x3-image-container">
+                        <img src="assets/figures/obm/src/3_src.png" 
+                             alt="Main Image 3" 
+                             class="hover-image" 
+                             data-hover-src="assets/figures/obm/res/3_res.png">
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
-            Hover over the background image to relight the foreground image in the same illumination.
-        </p>
-
-        <p class="text" style="text-align: center; color: brown; font-weight: bold;">
-            [Please wait for a few minutes to load all the images]
-        </p>
-        
-        <div class="grid1x3-container" id="grid1x3">
-            <!-- Currently using only two grid, as it looks good in high quality--> 
-            <!-- Grid Item 1 -->
-            <!-- <div class="grid2x3-item">
-                <div class="grid2x3-image-container">
-                    <div class="grid2x3-thumbnails-wrapper">
-                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
-                        <div class="grid2x3-thumbnails-container">
-                            <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_1.png">
-                            <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_3.png">
-                            <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_5.png">
-                        </div>
-                    </div>
-                    <div class="grid2x3-large-image-wrapper">
-                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
-                        <img src="assets/figures/sc/src/2.png" alt="Large Image 1" class="grid2x3-large-image" id="grid2x3-large-image-1">
-                    </div>
-                </div>
-            </div> -->
-            <!-- Repeat Grid Items 2 to 6 -->
-            <!-- Grid Item 2 -->
-            <div class="grid1x3-item">
-                <div class="grid1x3-image-container">
-                    <div class="grid1x3-thumbnails-wrapper">
-                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
-                        <div class="grid1x3-thumbnails-container">
-                            <img src="assets/figures/sr/ref/2_ref4.png" alt="Thumbnail 1" class="grid1x3-thumbnail"
-                                data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/3_4.png">
-                            <img src="assets/figures/sr/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid1x3-thumbnail"
-                                data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/3_2.png">
-                            <img src="assets/figures/sr/ref/9_ref4.jpg" alt="Thumbnail 3" class="grid1x3-thumbnail"
-                                data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/3_3.png">
-                        </div>
-                    </div>
-                    <div class="grid1x3-large-image-wrapper">
-                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
-                        <img src="assets/figures/sr/src/3.png" alt="Large Image 2" class="grid1x3-large-image" id="grid1x3-large-image-2">
-                    </div>
-                </div>
-            </div>
-            <div class="grid1x3-item">
-                <div class="grid1x3-image-container">
-                    <div class="grid1x3-thumbnails-wrapper">
-                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
-                        <div class="grid1x3-thumbnails-container">
-                            <img src="assets/figures/sr/ref/2_ref1.png" alt="Thumbnail 1" class="grid1x3-thumbnail"
-                                data-target="grid1x3-large-image-3" data-hover-src="assets/figures/sr/res/2_1.png">
-                            <img src="assets/figures/sr/ref/2_ref2.jpg" alt="Thumbnail 2" class="grid1x3-thumbnail"
-                                data-target="grid1x3-large-image-3" data-hover-src="assets/figures/sr/res/2_2.png">
-                            <img src="assets/figures/sr/ref/2_ref3.jpg" alt="Thumbnail 3" class="grid1x3-thumbnail"
-                                data-target="grid1x3-large-image-3" data-hover-src="assets/figures/sr/res/2_3.png">
-                        </div>
-                    </div>
-                    <div class="grid1x3-large-image-wrapper">
-                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
-                        <img src="assets/figures/sr/src/2.png" alt="Large Image 3" class="grid1x3-large-image" id="grid1x3-large-image-3">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="container blog main">
-        <h2 id="object-insertion" style="text-align: center;">
-            Depth-Aware Object Insertion 
-        </h2>
-        <p class="text", style="text-align: justify;">
-            Given a single object image, our method can realistically insert the object at a precise depth, with natural blending with scene content, color harmonization, and appropriate shadows. 
-        </p>
-    </div>  
-
-        
-    <div class="container blog main gray extra-large">
-        <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
-            Hower over the object thumbnail image to insert it in the scene. 
-        </p>
-        <div class="columns-4">
-            <!-- Grid Item 1 -->
-            <div class="grid-item">
-                <div class="image-wrapper">
-                    <img src="assets/figures/ob/src/4_src.png" alt="Main Image 1" class="main-image" id="large-image-1">
-                    <div class="overlay-container">
-                        <img src="assets/figures/ob/ref/4_ref.png" alt="Small Image 1" class="small-image"
-                             data-target="large-image-1" data-hover-src="assets/figures/ob/res/4_res.png">
-                    </div>
-                </div>
-            </div>
-            <!-- Grid Item 2 -->
-            <div class="grid-item">
-                <div class="image-wrapper">
-                    <img src="assets/figures/ob/src/1_src.png" alt="Main Image 2" class="main-image" id="large-image-2">
-                    <div class="overlay-container">
-                        <img src="assets/figures/ob/ref/1_ref.png" alt="Small Image 2" class="small-image"
-                             data-target="large-image-2" data-hover-src="assets/figures/ob/res/1_res.png">
-                    </div>
-                </div>
-            </div>
-            <!-- Grid Item 3 -->
-            <div class="grid-item">
-                <div class="image-wrapper">
-                    <img src="assets/figures/ob/src/3_src.png" alt="Main Image 3" class="main-image" id="large-image-3">
-                    <div class="overlay-container">
-                        <img src="assets/figures/ob/ref/3_ref.png" alt="Small Image 3" class="small-image"
-                             data-target="large-image-3" data-hover-src="assets/figures/ob/res/3_res.png">
-                    </div>
-                </div>
-            </div>
-            <!-- Grid Item 4 -->
-            <div class="grid-item">
-                <div class="image-wrapper">
-                    <img src="assets/figures/ob/src/2_src.png" alt="Main Image 4" class="main-image" id="large-image-4">
-                    <div class="overlay-container">
-                        <img src="assets/figures/ob/ref/2_ref.png" alt="Small Image 4" class="small-image"
-                             data-target="large-image-4" data-hover-src="assets/figures/ob/res/2_res.png">
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat for additional grid items -->
-        </div>
-
-        <div class="columns-4">
-            <!-- Grid Item 1 -->
-            <div class="grid-item">
-                <div class="image-wrapper">
-                    <img src="assets/figures/ob/src/5_src.png" alt="Main Image 5" class="main-image" id="large-image-5">
-                    <div class="overlay-container">
-                        <img src="assets/figures/ob/ref/5_ref.png" alt="Small Image 5" class="small-image"
-                             data-target="large-image-5" data-hover-src="assets/figures/ob/res/5_res.png">
-                    </div>
-                </div>
-            </div>
-            <!-- Grid Item 2 -->
-            <div class="grid-item">
-                <div class="image-wrapper">
-                    <img src="assets/figures/ob/src/6_src.png" alt="Main Image 6" class="main-image" id="large-image-6">
-                    <div class="overlay-container">
-                        <img src="assets/figures/ob/ref/6_ref.png" alt="Small Image 6" class="small-image"
-                             data-target="large-image-6" data-hover-src="assets/figures/ob/res/6_res.png">
-                    </div>
-                </div>
-            </div>
-            <!-- Grid Item 3 -->
-            <div class="grid-item">
-                <div class="image-wrapper">
-                    <img src="assets/figures/ob/src/9_src.png" alt="Main Image 7" class="main-image" id="large-image-7">
-                    <div class="overlay-container">
-                        <img src="assets/figures/ob/ref/9_ref.png" alt="Small Image 7" class="small-image"
-                             data-target="large-image-7" data-hover-src="assets/figures/ob/res/9_res.png">
-                    </div>
-                </div>
-            </div>
-            <!-- Grid Item 4 -->
-            <div class="grid-item">
-                <div class="image-wrapper">
-                    <img src="assets/figures/ob/src/8_src.png" alt="Main Image 8" class="main-image" id="large-image-8">
-                    <div class="overlay-container">
-                        <img src="assets/figures/ob/ref/8_ref.png" alt="Small Image 8" class="small-image"
-                             data-target="large-image-8" data-hover-src="assets/figures/ob/res/8_res.png">
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat for additional grid items -->
-        </div>
-    </div>
-    
-    <!-- For object moving -->
-    <div class="container blog main gray extra-large">
-        <h2 id="object-movement" style="text-align: center;">
-            Placing Object at different locations
-        </h2>
-        <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
-            Hover over the image to move the placed object in the scene. 
-        </p>
-        <div class="grid1x3-container_new" id="new-grid1x3">
-            <!-- Grid Item 1 -->
-            <div class="grid1x3-item-move">
-                <div class="grid1x3-image-container">
-                    <img src="assets/figures/obm/src/1_src.png" 
-                         alt="Main Image 1" 
-                         class="hover-image" 
-                         data-hover-src="assets/figures/obm/res/1_res.png">
-                </div>
-            </div>
-            <!-- Grid Item 2 -->
-            <div class="grid1x3-item-move">
-                <div class="grid1x3-image-container">
-                    <img src="assets/figures/obm/src/7_src.png" 
-                         alt="Main Image 2" 
-                         class="hover-image" 
-                         data-hover-src="assets/figures/obm/res/7_res.png">
-                </div>
-            </div>
-            <!-- Grid Item 3 -->
-            <div class="grid1x3-item-move">
-                <div class="grid1x3-image-container">
-                    <img src="assets/figures/obm/src/3_src.png" 
-                         alt="Main Image 3" 
-                         class="hover-image" 
-                         data-hover-src="assets/figures/obm/res/3_res.png">
-                </div>
-            </div>
-        </div>
-    </div>
-    
     </d-article>
     <d-appendix>
         <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 1.3em; color: #2c3e50;">BibTeX</h3>
